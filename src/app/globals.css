@@ -6,10 +6,9 @@
   --theme-rounded-base: 20px;
   --theme-rounded-container: 4px;
   --theme-border-base: 1px;
-  --theme-font-family-base	: 'Roboto', sans-serif;
-  --theme-font-family-heading: 'Roboto', sans-serif;
-  --theme-font-family-monospace: 'Roboto Mono', monospace;
-
+  --theme-font-family-base: "Roboto", sans-serif;
+  --theme-font-family-heading: "Roboto", sans-serif;
+  --theme-font-family-monospace: "Roboto Mono", monospace;
 }
 
 body {
