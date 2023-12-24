@@ -1,10 +1,8 @@
 "use client";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { store } from "./store/store";
 import { Provider, useDispatch } from "react-redux";
-import { ModalContext, ModalProvider } from "./context/ModalContext";
 import { useEffect } from "react";
 import { fetchPokeData } from "./store/pokeSlice";
 
@@ -26,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
       <body className={inter.className} data-theme="crimson">
         <Provider store={store}>
           <InitData />
-          <ModalProvider>{children}</ModalProvider>
+          {children}
         </Provider>
       </body>
     </html>

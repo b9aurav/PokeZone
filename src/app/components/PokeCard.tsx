@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { useModal } from "../context/ModalContext";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store/store";
-import { fetchPokeInfo } from "../store/pokeSlice";
 import Modal from "./Modal";
 
 type Props = {
@@ -40,14 +36,14 @@ const PokeCard = (props: Props) => {
           <label className=" text-white font-bold text-[20px] z-30 transition-transform duration-500 ease-in-out transform hover:scale-125 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
             {String(props.data.name).toUpperCase()}
           </label>
-          <span className="chip variant-filled right-[-25px] absolute">
+          <span className="chip cursor-default variant-filled right-[-25px] absolute">
             #{props.id}
           </span>
         </div>
         <div className="w-full">
           {props.data.types.map((typeObj: any, index: number) => (
             <span
-              className="chip variant-filled-error mr-1 mt-1"
+              className="chip cursor-default variant-filled-error mr-1 mt-1"
               key={typeObj.type.name}
             >
               {typeObj.type.name}

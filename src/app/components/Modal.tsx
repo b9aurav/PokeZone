@@ -1,7 +1,5 @@
-import { useModal } from "../context/ModalContext";
-import Image from "next/image";
 import RadialProgressBar from "./RadialProgressBar";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 type Props = {
   image: React.ReactNode;

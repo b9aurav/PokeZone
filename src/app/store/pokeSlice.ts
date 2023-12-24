@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
 
 export const fetchPokeData = createAsyncThunk("poke/fetchData", async () => {
   var data: any = {};

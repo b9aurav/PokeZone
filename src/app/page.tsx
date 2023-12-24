@@ -1,11 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import PokeCard from "./components/PokeCard";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchPokeData } from "./store/pokeSlice";
+import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
-import Modal from "./components/Modal";
 
 export default function Home() {
   const data: any = useSelector((state: RootState) => state.poke.data) || [];
