@@ -10,13 +10,21 @@ type Props = {
 
 const PokeCard = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [imageSrc, setImageSrc] = useState('/pokeball.svg');
+  const [isImageLoading, setIsImageLoading] = useState(true); 
+  const handleImageLoad = () => {
+    setImageSrc(`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${props.id}.svg`);
+    setIsImageLoading(false);
+  };
+
   const imageComponent = (
     <Image
-      src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${props.id}.svg`}
+      src={imageSrc}
       alt="image"
       width={150}
       height={150}
       className=""
+      onLoad={handleImageLoad}
     />
   );
 
@@ -52,12 +60,13 @@ const PokeCard = (props: Props) => {
         </div>
         <div className="transition-transform duration-500 ease-in-out transform hover:scale-125 hover:drop-shadow-2xl pt-16 h-full">
           <Image
-            src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${props.id}.svg`}
+            src={imageSrc}
             alt="image"
             layout="fill"
             objectFit="contain"
             objectPosition="center"
-            className=""
+            className={`max-h-[220] ${isImageLoading ? 'u-flash' : ''}`}
+            onLoad={handleImageLoad}
           />
         </div>
       </div>
